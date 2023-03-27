@@ -1,0 +1,6 @@
+html, body , #root{
+    background-color: hsl(209, 100%, 10%);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
