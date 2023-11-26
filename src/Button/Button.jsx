@@ -3,10 +3,10 @@ import './Button.css';
 
 
 
-export function Button({symbol}) {
+export function Button({symbol, execute}) {
 
     function handleClick() {
-        alert('¡Me hiciste clic en ' + symbol  + "!");
+        execute();
     }
 
     if (symbol === '') {

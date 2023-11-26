@@ -4,8 +4,17 @@ import {Display} from '../Display/Display.jsx';
 import {ButtonsGrid} from '../ButtonsGrid/ButtonsGrid.jsx';
 
 export function Calculator(props) {
+
+    const clear = () => {
+        alert('¡Me hiciste clic en '  + "!");
+    }
+
+    const functions = {
+        executeClear: clear
+    };
+
     return <div className='Calculator'> 
         <Display/>
-        <ButtonsGrid/>
+        <ButtonsGrid functions={functions}/>
     </div>
 }

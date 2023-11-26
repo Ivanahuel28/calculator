@@ -12,7 +12,7 @@ export function ButtonsGrid(props) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'CE'}/>
+                <Button symbol={'CE'} execute={props.functions.executeClear}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
