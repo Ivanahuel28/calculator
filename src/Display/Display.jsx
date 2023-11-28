@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import './Display.css'
 
-export function Display(props) {
-
-    const [value, setValue] = useState(0);
-
+export function Display({value, onChange}) {
 
     return <input 
         className='Display'
         type="number"
         inputMode='numeric'
         value={value}
-        onChange={(e) => setValue(e.target.value)}/>
+        onChange={onChange}
+        />
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '../Button/Button.jsx';
 import './ButtonsGrid.css'
 
-export function ButtonsGrid(props) {
+export function ButtonsGrid({functions}) {
     return <div className='ButtonsGrid container h-75 m-1'>
 
         <div className="row">
@@ -12,7 +12,7 @@ export function ButtonsGrid(props) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'CE'} execute={props.functions.executeClear}/>
+                <Button symbol={'CE'} execute={functions}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
