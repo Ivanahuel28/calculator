@@ -5,7 +5,8 @@ export function Display({value, onChange}) {
 
     return <input 
         className='Display'
-        type="number"
+        placeholder="Ingrese números"
+        type="text"
         inputMode='numeric'
         value={value}
         onChange={onChange}
