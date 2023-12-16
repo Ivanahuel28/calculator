@@ -11,5 +11,6 @@ export function Display({value}) {
         type="text"
         inputMode='numeric'
         value={valueToDisplay}
+        readOnly
         />
 }

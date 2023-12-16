@@ -2,10 +2,12 @@ import React from 'react';
 import { Button } from '../Button/Button.jsx';
 import './ButtonsGrid.css'
 
-export function ButtonsGrid({onClear , onAddNumber}) {
+export function ButtonsGrid({calculatorFunctions}) {
+
+    const {clear, addNumber, addition, equal} = calculatorFunctions;
 
     function handleAddNumber(value) {
-        onAddNumber(value);
+        addNumber(value);
     } 
 
     return <div className='ButtonsGrid container h-75 m-1'>
@@ -17,7 +19,7 @@ export function ButtonsGrid({onClear , onAddNumber}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'CE'} onExecute={onClear}/>
+                <Button symbol={'CE'} onExecute={clear}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
@@ -105,7 +107,7 @@ export function ButtonsGrid({onClear , onAddNumber}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'+'}/>
+                <Button symbol={'+'} onExecute={addition}/>
             </div>
             
         </div>
@@ -125,7 +127,7 @@ export function ButtonsGrid({onClear , onAddNumber}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'='}/>
+                <Button symbol={'='} onExecute={equal}/>
             </div>
             
         </div>
