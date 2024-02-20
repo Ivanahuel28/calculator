@@ -87,7 +87,7 @@ export function ButtonsGrid({calculatorFunctions}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'-'}/>
+                <Button symbol={'-'} onExecute={subtract}/>
             </div>
             
         </div>

@@ -9,7 +9,6 @@ export function Display({value}) {
         className='Display'
         placeholder="Ingrese números"
         type="text"
-        inputMode='numeric'
         value={valueToDisplay}
         readOnly
         />
