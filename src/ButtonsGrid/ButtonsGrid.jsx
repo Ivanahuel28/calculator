@@ -4,7 +4,7 @@ import './ButtonsGrid.css'
 
 export function ButtonsGrid({calculatorFunctions}) {
 
-    const {clear, addNumber, addition, equal} = calculatorFunctions;
+    const {clear, addNumber, addition, subtract, equal} = calculatorFunctions;
 
     function handleAddNumber(value) {
         addNumber(value);
