@@ -4,10 +4,10 @@ import './ButtonsGrid.css'
 
 export function ButtonsGrid({calculatorFunctions}) {
 
-    const {clear, addNumber, addition, subtract, equal} = calculatorFunctions;
+    const {clear, addSimbol, equal, backspace} = calculatorFunctions;
 
-    function handleAddNumber(value) {
-        addNumber(value);
+    function handleAddSimbol(value) {
+        addSimbol(value);
     } 
 
     return <div className='ButtonsGrid container h-75 m-1'>
@@ -23,11 +23,11 @@ export function ButtonsGrid({calculatorFunctions}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'C'}/>
+                <Button symbol={'C'} onExecute={clear}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'backspace.png'}/>
+                <Button symbol={'backspace.png'} onExecute={backspace}/>
             </div>
             
         </div>
@@ -47,7 +47,7 @@ export function ButtonsGrid({calculatorFunctions}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'/'}/>
+                <Button symbol={'/'} onExecute={() => handleAddSimbol('/')}/>
             </div>
             
         </div>
@@ -55,39 +55,19 @@ export function ButtonsGrid({calculatorFunctions}) {
         <div className="row">
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'7'} onExecute={() => handleAddNumber(7)}/>
+                <Button symbol={'7'} onExecute={() => handleAddSimbol('7')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'8'} onExecute={() => handleAddNumber(8)}/>
+                <Button symbol={'8'} onExecute={() => handleAddSimbol('8')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'9'} onExecute={() => handleAddNumber(9)}/>
+                <Button symbol={'9'} onExecute={() => handleAddSimbol('9')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'x'}/>
-            </div>
-            
-        </div>
-
-        <div className="row">
-
-            <div className="col-3 p-1 h-auto">
-                <Button symbol={'4'} onExecute={() => handleAddNumber(4)}/>
-            </div>
-
-            <div className="col-3 p-1 h-auto">
-                <Button symbol={'5'} onExecute={() => handleAddNumber(5)}/>
-            </div>
-
-            <div className="col-3 p-1 h-auto">
-                <Button symbol={'6'} onExecute={() => handleAddNumber(6)}/>
-            </div>
-
-            <div className="col-3 p-1 h-auto">
-                <Button symbol={'-'} onExecute={subtract}/>
+                <Button symbol={'x'} onExecute={() => handleAddSimbol('*')}/>
             </div>
             
         </div>
@@ -95,19 +75,39 @@ export function ButtonsGrid({calculatorFunctions}) {
         <div className="row">
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'1'} onExecute={() => handleAddNumber(1)}/>
+                <Button symbol={'4'} onExecute={() => handleAddSimbol('4')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'2'} onExecute={() => handleAddNumber(2)}/>
+                <Button symbol={'5'} onExecute={() => handleAddSimbol('5')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'3'} onExecute={() => handleAddNumber(3)}/>
+                <Button symbol={'6'} onExecute={() => handleAddSimbol('6')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'+'} onExecute={addition}/>
+                <Button symbol={'-'} onExecute={() => handleAddSimbol('-')}/>
+            </div>
+            
+        </div>
+
+        <div className="row">
+
+            <div className="col-3 p-1 h-auto">
+                <Button symbol={'1'} onExecute={() => handleAddSimbol('1')}/>
+            </div>
+
+            <div className="col-3 p-1 h-auto">
+                <Button symbol={'2'} onExecute={() => handleAddSimbol('2')}/>
+            </div>
+
+            <div className="col-3 p-1 h-auto">
+                <Button symbol={'3'} onExecute={() => handleAddSimbol('3')}/>
+            </div>
+
+            <div className="col-3 p-1 h-auto">
+                <Button symbol={'+'} onExecute={() => handleAddSimbol('+')}/>
             </div>
             
         </div>
@@ -119,11 +119,11 @@ export function ButtonsGrid({calculatorFunctions}) {
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={'0'} onExecute={() => handleAddNumber(0)}/>
+                <Button symbol={'0'} onExecute={() => handleAddSimbol('0')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">
-                <Button symbol={','}/>
+                <Button symbol={','} onExecute={() => handleAddSimbol('.')}/>
             </div>
 
             <div className="col-3 p-1 h-auto">

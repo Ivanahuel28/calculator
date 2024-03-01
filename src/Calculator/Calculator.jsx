@@ -7,29 +7,29 @@ import { evaluate } from 'mathjs';
 export function Calculator(props) {
     
     const [valueToDisplay, setValueToDisplay] = useState('0');
-    const [valueOnMemory, setValueOnMemory] = useState('0');
 
     const calculatorFunctions = {
+        
         clear: () => {
             setValueToDisplay(0);
-            setValueOnMemory(0);
         },
-        addNumber: (number) => {
+
+        addSimbol: (simbol) => {
             if ( valueToDisplay == '0') {
-                setValueToDisplay(number);
+                setValueToDisplay(simbol);
             } else {
-                setValueToDisplay(String(valueToDisplay) + number);
+                setValueToDisplay(String(valueToDisplay) + simbol);
             }
         },
-        addition: () => {
-            setValueToDisplay(valueToDisplay + '+');
-        },
-        subtract: () => {
-            setValueToDisplay(valueToDisplay + '-'); 
-        },
+
         equal: () => {
-            console.log('hola');
+            setValueToDisplay(evaluate(valueToDisplay));
+        },
+
+        backspace: () => {
+            setValueToDisplay(valueToDisplay.slice(0, -1));
         }
+
     };
 
     return <div className='Calculator'> 
