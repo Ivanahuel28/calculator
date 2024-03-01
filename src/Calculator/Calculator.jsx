@@ -15,7 +15,11 @@ export function Calculator(props) {
             setValueOnMemory(0);
         },
         addNumber: (number) => {
-            setValueToDisplay(valueToDisplay+number);
+            if ( valueToDisplay == '0') {
+                setValueToDisplay(number);
+            } else {
+                setValueToDisplay(String(valueToDisplay) + number);
+            }
         },
         addition: () => {
             setValueToDisplay(valueToDisplay + '+');
